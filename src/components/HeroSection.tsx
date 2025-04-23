@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Scroll } from 'lucide-react';
+import { Sparkles, Scroll, ShoppingBag } from 'lucide-react';
 import Button from './ui/Button';
 
 const HeroSection: React.FC = () => {
@@ -40,13 +40,6 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
       
-      {/* Silhouette */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md opacity-20">
-        <div className="h-40 w-full bg-contain bg-bottom bg-no-repeat"
-             style={{ backgroundImage: "url('https://images.pexels.com/photos/6051534/pexels-photo-6051534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}>
-        </div>
-      </div>
-      
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
         <Sparkles className="h-8 w-8 text-amber-300 mx-auto mb-4 animate-float" />
@@ -59,10 +52,16 @@ const HeroSection: React.FC = () => {
         <p className="text-purple-300 mb-10 max-w-xl mx-auto">
           Where the mystical meets the practical — empowering mages, alchemists, and curious minds with enchanted gear and arcane wisdom.
         </p>
-        <Button onClick={scrollToAbout}>
-          <Scroll className="h-4 w-4 mr-2" />
-          Explore the Magic
-        </Button>
+        <div className='flex justify-center items-center flex-wrap gap-4'>
+          <Button onClick={scrollToAbout}>
+            <Scroll className="h-4 w-4 mr-2" />
+            Explore the Magic
+          </Button>
+          <Button onClick={()=>{window.location.href='https://sorcerersupply.store'}}>
+            <ShoppingBag className="h-4 w-4 mr-2" />
+            Discover Our Collection
+          </Button>
+        </div>
       </div>
     </section>
   );
